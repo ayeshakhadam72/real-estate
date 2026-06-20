@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    width: 100%;
+    min-height: 100%;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    /* Allow vertical scroll, hide horizontal scroll */
+    background-color: #000;
+}
+
+/* Background Video */
+.video-container {
+    position: fixed;
+    /* Keep video fixed in background while scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Main Layout */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    /* Allow expanding past screen */
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top Bar - Profile and Input */
+.top-bar {
+    position: absolute;
+    top: 4%;
+    left: 6%;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+
+.profile-container {
+    z-index: 3;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-icon {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+.input-container {
+    border: 4px solid #c29d33;
+    /* Outer gold border */
+    background-color: #2b2b2b;
+    padding: 3px;
+    margin-left: -20px;
+    /* Creates the overlap effect */
+    z-index: 1;
+}
+
+.link-input {
+    background-color: #3b3b3b;
+    /* Dark background inside */
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    /* Inner white border */
+    padding: 8px 15px 8px 30px;
+    /* Extra left padding for overlap */
+    font-size: 22px;
+    font-weight: 900;
+    /* Extra bold */
+    font-family: 'Arial Black', Impact, sans-serif;
+    width: 580px;
+    outline: none;
+}
+
+/* Blend mode to remove black background from JPEGs */
+.blend-mode {
+    mix-blend-mode: screen;
+}
+
+/* Left Graphic (Real Estate Brokerage & Vertical Red Arrow) */
+.live-graphic {
+    position: absolute;
+    top: 130px;
+    left: 4%;
+    width: 75%;
+    height: 85vh;
+    /* Viewport based height to ensure scaling */
+    object-fit: contain;
+    object-position: left top;
+    z-index: 4;
+}
+
+/* Right Graphic (Gate & Globe) */
+.main-graphic {
+    position: absolute;
+    bottom: 20vh;
+    /* Keep it slightly above bottom */
+    /* right: 5%; */
+    width: 40%;
+    height: 30vh;
+    object-fit: contain;
+    /* object-position: right bottom; */
+    left: 24%;
+    z-index: 3;
+}
+
+/* Top Right Route Graphic (img-pr-4.png) */
+.route-graphic {
+    position: absolute;
+    top: 16%;
+    left: 24%;
+
+    /* right: 5%; */
+    width: 40%;
+    max-width: 450px;
+    object-fit: contain;
+    object-position: right top;
+    z-index: 5;
+}
+
+/* Footer Text */
+.footer-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.text-red {
+    color: #ff0000;
+}
+
+.text-gold {
+    color: #b28a2f;
+}
